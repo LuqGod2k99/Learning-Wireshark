@@ -1,0 +1,39 @@
+BSD Packet Filter (BPF) syntax 
+			
+			- Need to create an expression contains one or more primitives
+			- Primitives are an id (name or number) plus qualifiers
+
+			- Qualifiers: 
+				- Type: Host, net, port, portrange 
+				- Direction: Src, dst, src or dst, src, and dst 
+				- Protocol : Ether, fddi, wlan, ip, ip6, arp, rarp, decnet, tcp, udp
+
+			- Examples: 
+				- ip host 192.168.1.1
+				- ether src AA:BB:CC:DD:EE:FF
+				- vlan 100 
+				- ether broadcast 
+				- tcp port 80 
+
+Capture Filters 
+			
+			How to sift hrough a large packet capture 
+
+			- Filter Operators
+					- eq/==
+					- or/||
+					- and/&&
+					- gt/>
+					- It/<
+					- ge/>=
+					- le/<=
+					- not/!
+					- ne/!=
+					- contains
+					- matches 
+					- ()
+
+			- Filters
+					- ip.host eq gateway --*to find all the traffic to and from the gateway
+					- ip.src eq gateway --*to find traffic that is orginated from the gateway
+					- 
